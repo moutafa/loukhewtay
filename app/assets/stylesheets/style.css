@@ -1,0 +1,45 @@
+#evenement {
+    -moz-border-radius:5px; /* FF1+ */
+    -webkit-border-radius:5px; /* Saf3-4 */
+    border-radius:5px;
+    -moz-box-shadow: 0 0 20px rgba(147, 210, 0, 1.2);
+    -webkit-box-shadow: 0 0 20px rgba(56, 215, 0, 1.2);
+    overflow:hidden;
+    border:0px solid #d3d3d3;
+    background:#fefefe;
+    padding: 10px;
+    width: 60%;
+}
+.user {
+    width: 10%;
+    float: left;
+    height: 100px;
+    padding-top: 25px;
+}
+.infoEvent {
+    width: 70%;
+    float: left;
+    height: 118px;
+    font-family: bold;
+    border: 1px solid #EEE;
+}
+.nomEvent {
+    font-family: bold;
+    font-size: 19px;
+}
+.dateEvent {
+    font-family: bold;
+    font-size: 13px;
+    FONT-STYLE: italic;
+}
+.imageEvent {
+    float: right;
+    height: 118px;
+    width: 15%;
+    border: 1px solid #000;
+}
+.endroitEvent {
+    font-family: bold;
+    font-size: 13px;
+    FONT-STYLE: italic;
+}
