@@ -1,36 +1,26 @@
 <h1>Listing evenements</h1>
 
-<table>
-  <tr>
-    <th>Nom</th>
-    <th>Description</th>
-    <th>Date</th>
-    <th>Frequence</th>
-    <th>Confidentialite</th>
-    <th>Endroit</th>
-    <th>Categorieevent</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @evenements.each do |evenement| %>
-  <tr>
-    <td><%= evenement.nom %></td>
-    <td><%= evenement.description %></td>
-    <td><%= evenement.date %></td>
-    <td><%= evenement.frequence %></td>
-    <td><%= evenement.confidentialite %></td>
-    <td><%= evenement.endroit_id %></td>
-    <td><%= evenement.categorieEvent_id %></td>
-    <td><%= evenement.user_id %></td>
-    <td><%= link_to 'Show', evenement %></td>
-    <td><%= link_to 'Edit', edit_evenement_path(evenement) %></td>
-    <td><%= link_to 'Destroy', evenement, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+      <% if evenement.user.idfacebook
+           @id = evenement.user.idfacebook
+           url = "https://graph.facebook.com/"+@id.to_s+"/picture"
+         else
+           url = "/images/profile.jpg"
+         end
+
+      %>
+
+      <div id="evenement">
+        <div class="user"><img src= <%= url %> ><br/><b><%= evenement.user.login %></b></div>
+        <div class="infoEvent">
+          <span class="nomEvent"><%= evenement.nom %></span><br/>
+          <span class="dateEvent"><%= evenement.date.to_date.to_formatted_s(:rfc822) %></span> &nbsp; | &nbsp;Au <span class="endroitEvent"><%= evenement.endroit.nom %></span><br/>
+          <span class="descEvent"><%= evenement.description %></span><br/>
+        </div>
+        <div class="imageEvent"></div>
+      </div>
+
 <% end %>
-</table>
 
 <br />
 

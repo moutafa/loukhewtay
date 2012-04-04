@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120401172032) do
     t.text     "description"
     t.string   "latitude"
     t.string   "longitude"
-    t.integer  "categorieEndroit_id"
+    t.integer  "categorie_endroit_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20120401172032) do
     t.string   "frequence"
     t.string   "confidentialite"
     t.integer  "endroit_id"
-    t.string   "categorieEvent_id"
+    t.string   "categorie_event_id"
     t.string   "user_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false

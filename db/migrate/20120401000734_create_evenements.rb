@@ -7,7 +7,7 @@ class CreateEvenements < ActiveRecord::Migration
       t.string :frequence
       t.string :confidentialite
       t.integer :endroit_id
-      t.string :categorieEvent_id
+      t.string :categorie_event_id
       t.string :user_id
 
       t.timestamps

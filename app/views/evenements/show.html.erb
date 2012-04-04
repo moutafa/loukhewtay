@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
+<% if @evenement.user.idfacebook
+     @id = @evenement.user.idfacebook
+     url = "https://graph.facebook.com/"+@id.to_s+"/picture"
+   else
+     url = "/images/profile.jpg"
+   end
 
-<p>
-  <b>Nom:</b>
-  <%= @evenement.nom %>
-</p>
+%>
 
-<p>
-  <b>Description:</b>
-  <%= @evenement.description %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @evenement.date %>
-</p>
+<div id="evenement">
+  <div class="user"><img src= <%= url %> ><br/><b><%= @evenement.user.login %></b></div>
+  <div class="infoEvent">
+    <span class="nomEvent"><%= @evenement.nom %></span><br/>
+    <span class="dateEvent"><%= @evenement.date.to_date.to_formatted_s(:rfc822) %></span> &nbsp; | &nbsp;Au <span class="endroitEvent"><%= @evenement.endroit.nom %></span><br/>
+    <span class="descEvent"><%= @evenement.description %></span><br/>
+  </div>
+  <div class="imageEvent"></div>
+</div>
 
 <p>
   <b>Frequence:</b>
@@ -24,12 +27,6 @@
   <b>Confidentialite:</b>
   <%= @evenement.confidentialite %>
 </p>
-
-<p>
-  <b>Endroit:</b>
-  <%= @evenement.endroit.nom %>
-</p>
-
 <p>
   <b>Categorieevent:</b>
   <%#= @evenement.categorie_event.libelle %>
@@ -37,7 +34,7 @@
 
 <p>
   <b>User:</b>
-  <%= @evenement.user.login %>
+
 </p>
 
 

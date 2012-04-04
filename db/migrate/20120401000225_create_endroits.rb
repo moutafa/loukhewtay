@@ -5,7 +5,7 @@ class CreateEndroits < ActiveRecord::Migration
       t.text :description
       t.string :latitude
       t.string :longitude
-      t.integer :categorieEndroit_id
+      t.integer :categorie_endroit_id
 
       t.timestamps
     end
