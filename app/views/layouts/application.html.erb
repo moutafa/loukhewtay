@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loukhewtay</title>
+  <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;key=AIzaSyCfDoYxNMAkjI0EZQxcvELQLF-cOvs2bAU" type="text/javascript"></script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAjHAH4phrdEd7bq9Y_2l7qBSDFB0_l5ozXyFOpbTYBX_mZYZNURQgZtuII803zIVQ72YWv9G-GAbTqw"></script>
+  <script type="text/javascript">
+      google.load("jquery", "1.6.2");
+  </script>
+
+</head>
+<body onLoad="load()" onUnload="GUnload()">
+<div id="fb-root">
+
+  <script type="text/javascript">
+
+      window.fbAsyncInit = function() {
+          FB.init({
+              appId      : '173000246052206',
+              status     : true,
+              cookie     : true,
+              xfbml      : true,
+          });
+      };
+
+      (function(d){
+          var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+          js = d.createElement('script'); js.id = id; js.async = true;
+          js.src = "//connect.facebook.net/fr_FR/all.js";
+          js.onload = function() {}
+          d.getElementsByTagName('head')[0].appendChild(js);
+      }(document));
+
+  </script>
+</div>
+<%= yield %>
+
+</body>
+</html>
